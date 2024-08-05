@@ -2,7 +2,7 @@
 ![Folder Management System Banner](https://i.imgur.com/Qdmeen8.png)
 ![Folder Management System Banner](https://i.imgur.com/2wLRigm.png)
 
-![Folder Management System Banner](https://i.imgur.com/yxusvo3.png)
+![Folder Management System Banner](https://i.imgur.com/2XeZVE8.png)
 
 
 
