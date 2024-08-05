@@ -24,7 +24,13 @@ const File = sequelize.define("File", {
 File.belongsTo(User, { foreignKey: { allowNull: false } });
 User.hasMany(File);
 
-File.belongsTo(Folder, { foreignKey: { allowNull: false } });
-Folder.hasMany(File);
+Folder.hasMany(File, {
+  foreignKey: 'FolderId',
+  onDelete: 'CASCADE',  // Enable cascading delete
+});
+
+File.belongsTo(Folder, {
+  foreignKey: 'FolderId',
+});
 
 module.exports = File;

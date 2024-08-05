@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
+import StorageChart from '../StorageChart/StorageChart';
+
 
 const Layout = ({ children }) => {
   return (
@@ -10,7 +12,11 @@ const Layout = ({ children }) => {
       <div className='flex-1'>
         {children}
       </div>
-      <div className='w-[17vw] rounded-xl rounded-e-none bg-white h-full'></div>
+      <div className='w-[17vw] rounded-xl  shadow-xl  bg-white h-full overflow-hidden'>
+        <h2 className='text-lg w-full p-2 text-center font-rubik border    text-inFile rounded-md'>Storage Chart</h2>
+        
+        <StorageChart/>
+      </div>
     </div>
   );
 };

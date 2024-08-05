@@ -38,7 +38,7 @@ const UploadFileModal = () => {
             setFile(null); // Clear the file input after successful upload
         } catch (error) {
             console.error("Error uploading file:", error.response ? error.response.data : error.message);
-            toast.error("Error uploading file.");
+            toast.error(" create file Inside a Folder");
         }
     };
 

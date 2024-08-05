@@ -7,46 +7,7 @@ require("dotenv").config();
 
 const s3 =require('../services/aws.js')
 
-// Upload a file
-// exports.uploadFile = async (req, res) => {
-//     try {
-//         const media = req.file; // Assuming single file upload with multer
-//         const { folderId } = req.body;
-//         const { userId } = req.user;
-
-//         if (!media) {
-//             return res.status(400).json({ error: "No file uploaded." });
-//         }
-
-//         console.log(`File uploaded by user ${userId}:`, media);
-
-//         try {
-//             // Generate a unique filename for the uploaded media
-//             const filename = `user${userId}/${Date.now()}_${media.originalname}`;
-
-//             // Upload the media to AWS S3
-//             const attachmentUrl = await uploadToS3(media.buffer, filename);
-// console.log(attachmentUrl,"attachmentUrl");
-//             // Save file details to the database
-//             // const uploadedFile = await File.create({
-//             //     name: media.originalname,
-//             //     url: attachmentUrl,
-//             //     size: media.size,
-//             //     UserId: userId,
-//             //     FolderId: folderId,
-//             // });
-
-//             // Send response with the uploaded file details
-//             res.status(201).json({ message: "File uploaded successfully", attachmentUrl });
-//         } catch (error) {
-//             console.error("Error processing file:", error);
-//             res.status(500).json({ error: "Error processing file." });
-//         }
-//     } catch (error) {
-//         console.error("Error uploading files:", error);
-//         res.status(500).json({ error: "Error uploading files." });
-//     }
-// };
+// Upload file to AWS S3
 exports.uploadFile = async (req, res) => {
     const file = req.file;
     const { folderId } = req.body;
@@ -107,7 +68,7 @@ exports.getFiles = async (req, res) => {
         // Fetch the latest 5 files from the database for the given user
         const files = await File.findAll({
             where: { UserId: userId }, // Use UserId field instead of userId
-            limit: 5,
+            
             order: [['createdAt', 'DESC']], // Order by creation date descending
         });
 
