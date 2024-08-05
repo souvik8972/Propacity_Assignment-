@@ -36,7 +36,7 @@ const {value}=useSelector((state) => state.folders);
 
 
   return (
-    <div className="w-[100%] min-h-[30vh] max-h-[35vh]  overflow-y-hidden">
+    <div className="w-[100%] min-h-[30vh] max-h-[35vh] overflow-hidden">
       <h4 className="bg-inFile w-fit p-1 pr-6 text-white rounded text-[15px] flex items-center">
         <BsDot /> Root Folders
       </h4>

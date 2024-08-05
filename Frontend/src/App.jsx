@@ -10,31 +10,28 @@ import FolderLayout from "./components/Folder/FolderLayout";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 
- import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MyFiles from "./components/FileSection/MyFiles";
 
 function App() {
   // Ensure the useAuthRedirect hook is called within the Provider context
 
-
   return (
     <Provider store={store}>
       <ToastContainer
-position="top-left"
-autoClose={2000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss={false}
-draggable
-pauseOnHover={false}
-theme="light"
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
 
-/>
-  
       <Navbar />
       <Routes>
         {/* Public routes */}
@@ -45,6 +42,7 @@ theme="light"
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/folder/:folderId" element={<FolderLayout />} />
+          <Route path="/my-files" element={<MyFiles />} />
         </Route>
       </Routes>
       <Footer />

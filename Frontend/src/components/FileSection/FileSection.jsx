@@ -8,7 +8,8 @@ const FileSection = () => {
   const [fileList, setFileList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { token } = useSelector((state) => state.auth);
+
+  const token = localStorage.getItem('token');
   const {value} =useSelector((state) => state.folders);
 
   const fetchFile = async () => {

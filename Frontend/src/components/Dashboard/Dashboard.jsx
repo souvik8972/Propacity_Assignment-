@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <AnimatePresence>
       <Layout>
-        <MainSection />
+        <MainSection  />
       </Layout>
     </AnimatePresence>
   );
