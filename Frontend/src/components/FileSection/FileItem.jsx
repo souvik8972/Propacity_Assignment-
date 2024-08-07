@@ -111,12 +111,12 @@ function FileItem({ file }) {
           ) : (
             <FaEdit
               onClick={() => setIsEditing(true)}
-              className="w-5 h-5 text-blue-500 hover:scale-110 transition-all"
+              className="w-5 h-5 text-inFile hover:scale-110 transition-all"
             />
           )}
           <FaTrash
             onClick={deleteFile}
-            className="w-5 h-5 text-red-500 hover:scale-110 transition-all"
+            className="w-5 h-5 text-gray-500 hover:scale-110 transition-all"
           />
         </div>
       </div>
